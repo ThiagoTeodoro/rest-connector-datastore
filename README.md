@@ -10,4 +10,4 @@ para um outro processo controlado que realiza cada operação unitariamente a ca
 
 ### Arquitetura 
 
-![Arquitetura](http://full/path/to/img.jpg)
+![Arquitetura](https://github.com/ThiagoTeodoro/rest-connector-datastore/blob/master/rest-connector-datastore-arq-fluxograma.png)
