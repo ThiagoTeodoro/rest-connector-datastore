@@ -50,12 +50,13 @@ export default function DatastoreRecordJob(): void {
     }
 
     /**
-     * Máximo de chamada por COR que é possivel é uma chamada por milesimo de segunto, por isso 
-     * o 1 ali no final do set interval.
+     * Máximo de chamada por CORE que é possivel é uma chamada por milesimo de segundo,
+     * aqui, vamos trabalhar com 40 mensagens por segundo, ou seja, uma chamada acada 25
+     * milésimo de segundo.
      */
     setInterval(async () => {
 
         //Chamando processo de POP e passando nossa função de processamento para ser executada.
         rsmqService.popMessage(String(process.env.QUEUE_NAME), functionProcessMessage);        
-    }, 1);    
+    }, 25);    
 }
