@@ -9,7 +9,7 @@ export default function AuthenticationMiddleware(req: Request, res: Response, ne
 
         const {authorization} = req.headers;
 
-        if(authorization=="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6ImNsay10ZXN0In0.31eoHKevCNqSCExUV-Px1Voye5j0vWYTy6Zop3mLiYY"){
+        if(authorization=="YXV0b3JpemHDp8Ojb3Byb3Zpc29yaWExMjM0NTY="){
 
             //Requisição autorizada
             next();
