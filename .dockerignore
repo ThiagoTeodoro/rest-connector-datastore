@@ -1,0 +1,6 @@
+
+#Ignorando a pasta node_modules pois ela não deve ser copiada para dentro do container ela tem que ser gerada lá no container!!!
+node_modules
+
+#Buils devem ser gerados dentro do container
+dist

@@ -11,3 +11,8 @@ para um outro processo controlado que realiza cada operação unitariamente a ca
 ### Arquitetura 
 
 ![Arquitetura](https://github.com/ThiagoTeodoro/rest-connector-datastore/blob/master/rest-connector-datastore-arq-fluxograma.png)
+
+### Deploy
+
+O Deploy desse projeto ou entrega é feito por meio de um arquivo Docker, nele contém as configurações necessárias do container e 
+dos detalhes de implementação como por exemplo, nome da fila, porta da aplicação etc...
