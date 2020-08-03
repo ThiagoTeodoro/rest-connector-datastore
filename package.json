@@ -4,7 +4,7 @@
   "description": "Conector Rest API, para comunicação com o Datastore.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/server.js",
+    "start": "node --max-old-space-size=1024 ./dist/server.js",
     "dev": "ts-node-dev ./src/server.ts",
     "build:linux": "tsc -p . "
   },
