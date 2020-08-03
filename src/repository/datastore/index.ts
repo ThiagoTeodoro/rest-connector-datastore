@@ -36,7 +36,7 @@ export default class DatastoreRepository {
             return resultQuery;
         } catch (error) {
 
-            new Error(`Ocorreu um problema ao tentar executar DatastoreRepository.selectEntity ${error}.`);
+            console.error(`Ocorreu um problema ao tentar executar DatastoreRepository.selectEntity ${error}.`);
             transaction.rollback();
             return resultQuery;
         }        
@@ -72,7 +72,7 @@ export default class DatastoreRepository {
             return true;
         } catch (error) {
             
-            new Error(`Ocorreu um problema ao tentar executar DatastoreRepository.insertEntity ${error}.`);
+            console.error(`Ocorreu um problema ao tentar executar DatastoreRepository.insertEntity ${error}.`);
             transaction.rollback();
             return false;
         }
@@ -113,7 +113,7 @@ export default class DatastoreRepository {
             return true;
         } catch(error) {
             
-            new Error(`Ocorreu um problema ao tentar executar DatastoreRepository.updateEntity ${error}.`);
+            console.error(`Ocorreu um problema ao tentar executar DatastoreRepository.updateEntity ${error}.`);
             transaction.rollback();
             return false;
         }
@@ -154,7 +154,7 @@ export default class DatastoreRepository {
             return true;
         } catch (error){
 
-            new Error(`Ocorreu um problema ao tentar executar DatastoreRepository.upsert ${error}.`);
+            console.error(`Ocorreu um problema ao tentar executar DatastoreRepository.upsert ${error}.`);
             transaction.rollback();
             return false;
         }

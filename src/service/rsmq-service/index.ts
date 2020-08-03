@@ -32,14 +32,12 @@ export default class RsmqService {
 
                 if (error) {
 
-                    console.error(`Ocorreu um erro ao tentar enviar a mensagem para a Fila ${queueName}: Error ${error}`);
-                    new Error(`Ocorreu um erro ao tentar enviar a mensagem para a Fila ${queueName}: Error ${error}`);
+                    console.error(`Ocorreu um erro ao tentar enviar a mensagem para a Fila ${queueName}: Error ${error}`);                    
                 }
             });
         } catch (error) {
 
-            console.log(`Aconteceu um erro inesperado ao tentar enviar uma mensagem para a fila ${queueName}. Error ${error}`);
-            new Error(`Aconteceu um erro inesperado ao tentar enviar uma mensagem para a fila ${queueName}. Error ${error}`);
+            console.log(`Aconteceu um erro inesperado ao tentar enviar uma mensagem para a fila ${queueName}. Error ${error}`);            
         }
     }
 
@@ -57,7 +55,7 @@ export default class RsmqService {
 
             if (err) {
 
-                console.error(err)
+                console.error(`Erro ao tentar realizar o POP da mensagem no Redis. Error : ${err}.`)
                 return
             }
 
@@ -87,8 +85,7 @@ export default class RsmqService {
 
                 if (error) {
 
-                    console.error(`Error ao tentar criar a Fila no Redis: Error : ${error}`);
-                    new Error(`Error ao tentar criar a Fila no Redis: Error : ${error}`)
+                    console.error(`Error ao tentar criar a Fila no Redis: Error : ${error}`);                    
                 }
 
                 if (resp === 1) {
@@ -98,8 +95,7 @@ export default class RsmqService {
             });
         } catch (error) {
 
-            console.log(`Aconteceu um erro inesperado ao tentar criar a fila ${queueName}. Error ${error}`);
-            new Error(`Aconteceu um erro inesperado ao tentar criar a fila ${queueName}. Error ${error}`);
+            console.log(`Aconteceu um erro inesperado ao tentar criar a fila ${queueName}. Error ${error}`);            
         }
     }
 
@@ -117,8 +113,7 @@ export default class RsmqService {
 
                 if (error) {
 
-                    console.error(`Erro ao tentar recuperar os dados da Fila ${queueName}. Error: ${error}.`);
-                    new Error(`Erro ao tentar recuperar os dados da Fila ${queueName}. Error: ${error}.`);
+                    console.error(`Erro ao tentar recuperar os dados da Fila ${queueName}. Error: ${error}.`);                    
                 }
 
                 console.log("==============================================");
@@ -136,8 +131,7 @@ export default class RsmqService {
             });
         } catch (error) {
 
-            console.error(`Aconteceu um erro inesperado ao tentar recuperar informações da fila ${queueName}. Error: ${error}.`)
-            new Error(`Aconteceu um erro inesperado ao tentar recuperar informações da fila ${queueName}. Error: ${error}.`);
+            console.error(`Aconteceu um erro inesperado ao tentar recuperar informações da fila ${queueName}. Error: ${error}.`)            
         }
     }
 
