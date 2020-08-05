@@ -1,6 +1,6 @@
 #Versão do node que vamos usar.
 FROM openjdk:11
-LABEL maintainer="thiago.rodrigues@callink.com.br"
+LABEL maintainer="thiago.teodoro.rodrigues@gmail.com"
 
 #Redis
 
