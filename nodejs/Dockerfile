@@ -1,6 +1,6 @@
 #Versão do node que vamos usar.
 FROM node:12
-LABEL maintainer="thiago.rodrigues@callink.com.br"
+LABEL maintainer="thiago.teodoro.rodrigues@gmail.com"
 
 
 #Redis
