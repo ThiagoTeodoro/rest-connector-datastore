@@ -31,16 +31,15 @@ public class RedisOperations {
      */
     public boolean sendMessageQueue(String queue, Object message){
 
-        try{
-
-            /*
+        /*
                 Estamos abrindo uma nova conexão a toda requisição
                 por que o Jedis não é Thread Safe. Isso faz
                 com que, diante de um grande numero de chamadas
                 a biblioteca lance erro, realizando uma conexão por
                 chamada isso não acontece.
              */
-            Jedis jedisConnection = new Jedis(redisHost, redisPort);
+        Jedis jedisConnection = new Jedis(redisHost, redisPort);
+        try{
 
             //Enviando dados para fila
             jedisConnection.rpush(queue, objectMapper.writeValueAsString(message));
@@ -50,6 +49,9 @@ public class RedisOperations {
             log.error("Ocorreu um erro inesperado em RedisOperations.sendMessageQueue(). Exception : ", e);
             e.printStackTrace();
             return false;
+        } finally {
+
+            jedisConnection.close();
         }
     }
 
@@ -64,16 +66,15 @@ public class RedisOperations {
      */
     public String popMessageQueue(String queue){
 
-        try{
-
-            /*
+        /*
                 Estamos abrindo uma nova conexão a toda requisição
                 por que o Jedis não é Thread Safe. Isso faz
                 com que, diante de um grande numero de chamadas
                 a biblioteca lance erro, realizando uma conexão por
                 chamada isso não acontece.
              */
-            Jedis jedisConnection = new Jedis(redisHost, redisPort);
+        Jedis jedisConnection = new Jedis(redisHost, redisPort);
+        try{
 
             //Retorna os dados na fila por POP ou retorna nulo se não tiver nada lá na fila.
             return jedisConnection.rpop(queue);
@@ -82,6 +83,9 @@ public class RedisOperations {
             log.error("Ocorreu um erro inesperado em RedisOperations.popMessageQueue(). Exception : ", e);
             e.printStackTrace();
             return null;
+        } finally {
+
+            jedisConnection.close();
         }
     }
 
