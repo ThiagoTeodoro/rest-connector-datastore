@@ -30,10 +30,10 @@ RUN wget http://download.redis.io/redis-stable.tar.gz && \
 EXPOSE 6379
 
 #Java
-COPY target/rest-connector-datastore-0.0.1-SNAPSHOT.jar /
+COPY rest-connector-datastore-0.0.1-SNAPSHOT.jar /
 COPY keyFile.json /
 COPY start.sh /
-RUN chmod +x /start.sh
+RUN chmod +x start.sh
 
 #Comando para subir os servidores
 CMD ["./start.sh"]
